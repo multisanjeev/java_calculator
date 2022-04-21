@@ -25,5 +25,10 @@ pipeline {
 				sh "mvn cobertura:cobertura -Dcobertura.report.format=xml"
 			}
 		}
+		stage('environment variable use'){
+			steps{
+				echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+			}
+		}
 	}
 }
