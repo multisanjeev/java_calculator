@@ -19,5 +19,11 @@ pipeline {
 				sh "mvn test"
 			}
 		}
+		stage('cobertura generate report job'){
+			steps{
+				echo "cobertura report job"
+				sh "mvn cobertura:cobertura -Dcobertura.report.format=xml"
+			}
+		}
 	}
 }
