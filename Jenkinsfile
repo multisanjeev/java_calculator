@@ -23,6 +23,7 @@ pipeline {
 			steps{
 				echo "cobertura report job"
 				sh "mvn cobertura:cobertura -Dcobertura.report.format=xml"
+				cobertura "**/target/site/cobertura/coverage.xml"
 			}
 		}
 	}
